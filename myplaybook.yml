@@ -1,0 +1,9 @@
+- hosts: all
+  become: yes
+  tasks: 
+        - name: Ensure that Apache webserver is installed
+          yum: 
+                name: httpd 
+                state: present 
+        - name: Ensure that service is running and persistent
+          service: name=httpd state=started 
